@@ -1,0 +1,156 @@
+body {
+    /* background: #00A19D; */
+    background: linear-gradient(#00a19d, #c9d3d3);
+    height: 100vh;
+    /* look at this tomorrow  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+.memory-board {
+    width: 85%;
+    max-width: 1000px;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 1000px;
+    margin-bottom: 4em;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.33% - 10px);
+    position: relative;
+    margin: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.memory-card:active {
+    transform: scale(0.97);
+    transition: transform 0.2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding: 20px;
+    border-radius: 2px;
+    background: #fff8e5;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.back-face {
+    color: white;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.matched {
+    border: 10px outset rgb(96, 95, 95);
+}
+
+.score {
+    padding-left: 0.5em;
+}
+
+.title {
+    border: 5px #e05d5d dotted;
+    display: flex;
+    height: 5%;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em;
+    margin: 1em 0 1em 0;
+}
+
+.title h3,
+.title h1 {
+    font-size: 1.5em;
+    font-family: "Press Start 2P", cursive;
+    color: #ffb344;
+}
+
+.gameover {
+    z-index: 1;
+    background: linear-gradient(#e05d5d, #ffb344);
+    color: #fff8e5;
+    width: 85%;
+    height: 100vh;
+    position: absolute;
+    margin: auto;
+    border: 10px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.winner,
+.gameover__win {
+    margin-top: 2em;
+    font-family: "Press Start 2P", cursive;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.gameover__win {
+    font-size: 3.5em;
+    line-height: 1;
+    overflow: hidden;
+}
+
+.replay-btn {
+    padding: 1em 2em;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-family: "Press Start 2P", cursive;
+    background: #ffb344;
+    margin: 2.5em 1em 0 1em;
+}
+
+.replay-btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.instructions {
+    font-size: 1rem;
+    font-family: "Press Start 2P", cursive;
+    text-align: center;
+    color: #ffb344;
+}
+
+@media (max-width: 600px) {
+    .memory-board {
+        height: 70%;
+        margin: 0.5em 0 1em 0;
+    }
+}
