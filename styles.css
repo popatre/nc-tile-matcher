@@ -1,6 +1,6 @@
 body {
     /* background: #00A19D; */
-    background: linear-gradient(#00a19d, #c9d3d3);
+    background: linear-gradient(#00a19d, #f3f7f7);
     height: 100vh;
     /* look at this tomorrow  */
     display: flex;
@@ -57,7 +57,7 @@ img {
     position: absolute;
     padding: 20px;
     border-radius: 2px;
-    background: #fff8e5;
+    background: #faf9f7;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
